@@ -1,13 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="homeworkstyle.css">
+</head>
+<body>
+    <div id="container">
+        <div class="top">NoteBook
+            
+        </div>
+        <div class="contain">
+            <div class="nav_con" id="id_nav_con">
+                <div class="nav_tools">
+                    <button type="button" id="nav_add" onclick="addNav()">添加+</button>
+                    <button type="button" id="nav_del" onclick="delNav()">删除-</button>
+                </div>
+                <div class="nav" id="id_nav">
+                    <div class="nav_01">第一个文件</div>
+                </div>
+            </div>
+            
+            <div id="id_body">
+                <div class="title">
+                    <button id="but" onclick="showNav(this.id)">
+                        <img src="imgs/left_arrow.png" >
+                        <a id="but_text">隐藏</a>
+                    </button>
+                    <input type="text" placeholder="请输入标题...">
+                    <!-- <a>标题</a> -->
+                </div>
+
+                <div class="content">
+                    <div class="text" ondblclick="show_mark(this.children[0])">
+                        <textarea name="" id="content" placeholder="请输入内容..." onclick="showbianhao(this.parentNode.children[0])"></textarea>
+                        
+                        <div class="bt_function">
+                            <div class="bt_up">
+                                <button type="submit" id="add_up" onclick="add_up(this.parentNode.parentNode.parentNode)">上添加↑+</button>
+                                <button type="submit" id="add_down" onclick="add_down(this.parentNode.parentNode.parentNode)">下添加↓+</button>
+                                <button type="submit" id="del" onclick="del_this(this.parentNode.parentNode.parentNode)">删除-</button>
+                            </div>
+                            <div class="bt_down">
+                                <button type="submit" id="move_up" onclick="move_up(this.parentNode.parentNode.parentNode)">上移↑</button>
+                                <button type="submit" id="move_down" onclick="move_down(this.parentNode.parentNode.parentNode)">下移↓</button>
+                                <button type="submit" id="show_html" onclick="show_html(this.parentNode.parentNode.parentNode)">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="state">我是状态栏
+                <br>
+                <a href="#" id="num">编号：</a>
+                <br>
+                <a href="#">fontSize：24</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
 </html>
+<script src="homeworkjs.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- <script src="https://unpkg.com/turndown/dist/turndown.js"></script> -->
+<script src="to_markdown.js"></script>
